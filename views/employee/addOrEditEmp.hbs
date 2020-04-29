@@ -1,0 +1,37 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/employee" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        <label for="">Название компании</label>
+        <input type="text" class="form-control" name="compName" placeholder="Название компании"  value="{{employee.compName}}">
+        <div class="text-danger">
+            {{employee.compNameError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{employee.email}}">
+        <div class="text-danger">
+            {{employee.emailError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Профессиональная область</label>
+        <input type="text" class="form-control" name="profArea" placeholder="Профессиональная область" value="{{employee.profArea}}">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="">Телефон</label>
+            <input type="text" class="form-control" name="phone" placeholder="Телефон"  value="{{employee.phone}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="">Город</label>
+            <input type="text" class="form-control" name="city" placeholder="Город" value="{{employee.city}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database" style="margin-right: 10px;"></i>{{btnTitle}}</button>
+        <a href="/employee/employee_list" class="btn btn-secondary"><i class="fa fa-list-alt mr-2"></i>View All</a>
+    </div>
+</form>

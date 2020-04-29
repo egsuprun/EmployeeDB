@@ -1,0 +1,30 @@
+<h3><a class="btn btn-secondary mr-2" href="/employee"><i class="fa fa-plus"></i>Добавить</a>Список работодателей</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Название компании</th>
+            <th>Город</th>
+            <th>Email</th>
+            <th>Телефон</th>
+            <th>Проф область</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.compName}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.phone}}</td>
+            <td>{{this.profArea}}</td>
+            <td class="text-center">
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true" title="Редактировать запись"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Вы действительно хотите удалить эту запись?');"><i class="fa fa-trash fa-lg ml-2" aria-hidden="true" title="Удалить запись"></i></a>
+                <a href="/vacancy?id={{this._id}}&&name={{this.compName}}"><i class="fa fa-plus fa-lg ml-2" aria-hidden="true" title="Добавить вакансию"></i></a>
+                <a href="/vacancy/vacancy_list/{{this._id}}"><i class="fa fa-list fa-lg ml-2" aria-hidden="true" title="Посмотреть все вакансии работодателя"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

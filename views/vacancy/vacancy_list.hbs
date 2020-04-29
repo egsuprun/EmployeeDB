@@ -1,0 +1,28 @@
+<h3>
+    {{!-- <a class="btn btn-secondary mr-2" href="/vacancy"><i class="fa fa-plus"></i>Добавить</a> --}}
+Вакансии</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Название вакансии</th>
+            <th>Название компании</th>
+            <th>Зарплата</th>
+            <th>Описание</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.vacancyName}}</td>
+            <td><a href="/employee/employee_list">{{this.compName}}</a></td>
+            <td>{{this.salary}}</td>
+            <td>{{this.description}}</td>
+            <td class="text-center">
+                <a href="/vacancy/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true" title="Редактировать запись"></i></a>
+                <a href="/vacancy/delete/{{this._id}}" onclick="return confirm('Вы действительно хотите удалить эту запись?');"><i class="fa fa-trash fa-lg ml-2" aria-hidden="true" title="Удалить запись"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

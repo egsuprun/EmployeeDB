@@ -1,0 +1,34 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/vacancy" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{vacancy._id}}">
+    <input type="hidden" name="parent_id" value="{{parentId}}">
+    {{!-- <input type="hidden" name="parent_name" value="{{parentName}}"> --}}
+
+    <div class="form-group">
+        <label for="">Название вакансии</label>
+        <input type="text" class="form-control" name="vacancyName" value="{{vacancy.vacancyName}}">
+        <div class="text-danger">
+            {{vacancy.vacNameError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Название компании</label>
+        <input type="text" class="form-control" name="compName" value="{{parentName}}">
+        <div class="text-danger">
+            {{vacancy.compNameError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Зарплата</label>
+        <input type="text" class="form-control" name="salary" value="{{vacancy.salary}}">
+    </div>
+    <div class="form-group">
+        <label for="">Описание</label>
+        <input type="text" class="form-control" name="description" value="{{vacancy.description}}">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database" style="margin-right: 10px;"></i>{{btnTitle}}</button>
+        <a href="/vacancy/vacancy_list" class="btn btn-secondary"><i class="fa fa-list-alt mr-2"></i>View All</a>
+    </div>
+</form>
